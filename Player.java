@@ -5,28 +5,59 @@ import java.util.List;
 
 public class Player {
 	
-	List<String> hand = new ArrayList<String>();
+	List<Card> hand = new ArrayList<Card>();	
+
+	private String playerName;
 	
-	int score = 0;
+	private int score;
 	
-	String name = "idk what im doing";
+	public Player(String name) {
+		this.playerName = name;
+		this.score = 0;			
+	}
+			
+	public void describe() {
+		System.out.println(this.getPlayerName());
+		System.out.println(this.getScore() + "\n");
+		for (Card card:hand) {
+		card.describe();
+		}
+	}
 	
-	private void describe() {
-		get.Card
+	public void draw(Deck deck) {
+		hand.add(deck.draw());
+	}
+	
+	public Card flip() {		
+	    return hand.remove(0);
+	}
 		
-		System.out.println();
+	public void incrementScore() {
+		score = score + 1;
 	}
 	
-	public void flip() {
-		int cardPosition = hand.indexOf(0);
-	    hand.remove(cardPosition);
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 	
-	public void draw() {
-		
+	public List<Card> getHand() {
+		return hand;
+	}
+
+	public void setHand(List<Card> hand) {
+		this.hand = hand;
 	}
 	
-	public Integer incrementScore() {
-		return score +1;
-	}
 }

@@ -2,41 +2,41 @@ package java6CodingAssignment;
 
 public class Card {
 	
-	private int[] value = {2,3,4,5,6,7,8,9,10,11,12,13,14};
+	private int value; 
 	
-	private String[] name = {"Diamonds", "Hearts", "Spades", "Clubs"};
+	private String name;
 	
-	private String card = (value + " of " + name);
-	
-	private String describe() {
-		return card;
+	void describe() {
+		System.out.println(value + ", " + name);
 	}
-
 	
-	public int[] getValue() {
+	public int getValue() {
 		return value;
 	}
 
-	public void setValue(int[] value) {
+
+
+	public void setValue(int value) {
 		this.value = value;
 	}
 
-	public String[] getName() {
+
+
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String[] name) {
+
+
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getCard() {
-		return card;
+	//Card constructor???
+	public Card(int value, String name) {
+		this.value = value;
+		this.name = name;
 	}
-
-	public void setCard(String card) {
-		this.card = card;
-	}
-
 }
 
 
